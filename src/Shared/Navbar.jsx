@@ -115,8 +115,8 @@ const Navbar = () => {
               <ul tabIndex={0}
                 className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
-                <li onClick={handleLogOut}>
-                  <a className="font-archivo font-medium">Logout</a>
+                <li>
+                  <p onClick={handleLogOut} className="font-archivo font-medium">Logout</p>
                 </li>
               </ul>
             </div>
