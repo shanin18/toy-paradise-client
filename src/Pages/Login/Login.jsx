@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
+  useTitle("Login");
+
   return (
     <div className="card w-96 mx-auto shadow-2xl mt-24 pt-8">
       <h2 className="font-bangers text-3xl md:text-4xl text-center">Login</h2>
@@ -24,16 +27,18 @@ const Login = () => {
             placeholder="password"
             className="input input-bordered font-archivo"
           />
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover font-archivo">
-              Forgot password?
-            </a>
-          </label>
         </div>
         <div className="form-control mt-3">
-          <button className="btn bg-[#01bfff] border-0 font-archivo">Login</button>
+          <button className="btn bg-[#01bfff] border-0 font-archivo">
+            Login
+          </button>
         </div>
-        <small className="font-archivo mt-3">New here? <Link to="/register" className="hover:underline text-[#01bfff]">create an account</Link></small>
+        <small className="font-archivo mt-3">
+          New here?
+          <Link to="/signUp" className="hover:underline pl-1 text-[#01bfff]">
+            create an account
+          </Link>
+        </small>
         <div className="divider font-archivo">OR</div>
         <div className="flex justify-center">
           <button className="btn btn-ghost btn-circle">
