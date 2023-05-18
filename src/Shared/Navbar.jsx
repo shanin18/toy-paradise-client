@@ -1,8 +1,12 @@
+import { Link, NavLink } from "react-router-dom";
+import logo from "/images/logo.png";
+
 const Navbar = () => {
+
   return (
-    <div className="container mx-auto">
-      <div className="navbar bg-base-100">
-        <nav className="navbar-start">
+    <nav className="bg-gradient-to-r from-[#2e85ff] via-[#01bfff] to-[#60ccff] py-2">
+      <div className="navbar container mx-auto justify-between">
+        <div>
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -20,75 +24,76 @@ const Navbar = () => {
                 />
               </svg>
             </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-            >
+            <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               <li>
-                <a>Item 1</a>
-              </li>
-              <li tabIndex={0}>
-                <a className="justify-between">
-                  Parent
-                  <svg
-                    className="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                  </svg>
-                </a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <a>Home</a>
               </li>
               <li>
-                <a>Item 3</a>
+                <a>All Toys</a>
+              </li>
+              <li>
+                <a>My Toys</a>
+              </li>
+              <li>
+                <a>Add A Toy</a>
+              </li>
+              <li>
+                <a>Blogs</a>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
-        </nav>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <Link to="/">
+            <div className="flex items-center">
+              <img className="w-16" src={logo} alt="logo" />
+              <p className="font-bangers uppercase text-3xl">Toy Paradise</p>
+            </div>
+          </Link>
+        </div>
+        <div className="hidden lg:flex">
+          <ul className="menu menu-horizontal gap-5 px-1 font-archivo text-lg font-semibold">
             <li>
-              <a>Item 1</a>
-            </li>
-            <li tabIndex={0}>
-              <a>
-                Parent
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                </svg>
-              </a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "text-white" : "")}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <a>Item 3</a>
+              <NavLink
+                to="/all_toys"
+                className={({ isActive }) => (isActive ? "text-white" : "")}
+              >
+                All Toys
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/my_toys"
+                className={({ isActive }) => (isActive ? "text-white" : "")}
+              >
+                My Toys
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/add_a_toy"
+                className={({ isActive }) => (isActive ? "text-white" : "")}
+              >
+                Add A Toy
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/blogs"
+                className={({ isActive }) => (isActive ? "text-white" : "")}
+              >
+                Blogs
+              </NavLink>
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="">
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
@@ -109,7 +114,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -1,10 +1,13 @@
+import Banner from "../Banner/Banner";
+import Gallery from "../Gallery/Gallery";
 
 
 
 const Home = () => {
     return (
-        <div>
-            <h1>this is home</h1>
+        <div className="space-y-24">
+            <Banner></Banner>
+            <Gallery></Gallery>
         </div>
     );
 };
