@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
-  useTitle("Login");
+    useTitle("Login");
+
 
   return (
     <div className="card w-96 mx-auto shadow-2xl mt-24 pt-8">
