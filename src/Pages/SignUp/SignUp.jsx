@@ -1,12 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
+import LoginWithSocial from "../../Shared/LoginWithSocial";
 
 const SignUp = () => {
   useTitle("Sign up");
-  const { createUser,updateUserProfile, user } = useContext(AuthContext);
+  const { createUser,updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -22,14 +24,13 @@ const SignUp = () => {
         const user = result.user;
         updateUserProfile(user, name, photo)
         .then(() => {
+            navigate("/")
             form.reset()
         })
         .catch(err => console.log(err.message))
       })
       .catch((err) => setError(err.message));
   };
-
-  console.log(user)
 
   return (
     <div className="mx-4 mt-24">
@@ -102,15 +103,7 @@ const SignUp = () => {
           </Link>
         </small>
         <div className="divider font-archivo">OR</div>
-        <div className="flex justify-center">
-          <button className="btn btn-ghost btn-circle">
-            <img
-              className="w-10"
-              src="https://i.ibb.co/zXbZ9B9/Google.png"
-              alt="google logo"
-            />
-          </button>
-        </div>
+        <LoginWithSocial></LoginWithSocial>
       </div>
     </div>
   );
