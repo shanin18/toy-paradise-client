@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const SignUp = () => {
+    useTitle("Sign up")
+
   return (
-    <div className=" mx-4 mt-24 pt-8">
-      
+    <div className="mx-4 mt-24">
       <div className="card-body md:w-[600px] shadow-2xl mx-auto rounded-xl">
-      <h2 className="font-bangers text-3xl md:text-4xl text-center">Sign up</h2>
+      <h2 className="font-bangers text-3xl md:text-4xl text-center my-4">Sign up</h2>
         <div className="grid md:grid-cols-2 gap-5">
             <div className="form-control">
               <label className="label">
