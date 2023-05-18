@@ -3,7 +3,7 @@ import logo from "/images/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-base-300">
+    <footer className="bg-base-300 mt-24">
       <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 px-2 py-8">
         <Link to="/">
           <div className="flex items-center">

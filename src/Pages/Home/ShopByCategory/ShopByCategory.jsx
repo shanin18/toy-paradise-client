@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import SingleCategoryToy from "./SingleCategoryToy";
 
 const ShopByCategory = () => {
-    const [category, setCategory] = useState("Marvel");
-    const [categoryToys, setCategoryToys] = useState([])
+  const [category, setCategory] = useState("Marvel");
+  const [categoryToys, setCategoryToys] = useState([]);
 
-    useEffect(()=>{
-        fetch(`http://localhost:5000/action_figure/${category}`)
-        .then(res => res.json())
-        .then(data => setCategoryToys(data)) 
-    },[category])
+  useEffect(() => {
+    fetch(`http://localhost:5000/action_figure/${category}`)
+      .then((res) => res.json())
+      .then((data) => setCategoryToys(data));
+  }, [category]);
 
-    console.log(categoryToys)
+  console.log(categoryToys);
 
   return (
     <div>
@@ -21,20 +22,32 @@ const ShopByCategory = () => {
       </h1>
       <Tabs>
         <TabList className="text-center border-b font-archivo text-lg font-medium">
-          <Tab onClick={()=> setCategory("Marvel")}>Marvel</Tab>
-          <Tab onClick={()=> setCategory("Avengers")}>Avenger</Tab>
-          <Tab onClick={()=> setCategory("Transformers")}>Transformers</Tab>
+          <Tab onClick={() => setCategory("Marvel")}>Marvel</Tab>
+          <Tab onClick={() => setCategory("Avengers")}>Avenger</Tab>
+          <Tab onClick={() => setCategory("Transformers")}>Transformers</Tab>
         </TabList>
 
         <div className="container mx-auto mt-5">
           <TabPanel>
-            <h2>Any content 1</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {categoryToys?.map((toy) => (
+                <SingleCategoryToy key={toy._id} toy={toy}></SingleCategoryToy>
+              ))}
+            </div>
           </TabPanel>
           <TabPanel>
-            <h2>Any content 2</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {categoryToys?.map((toy) => (
+                <SingleCategoryToy key={toy._id} toy={toy}></SingleCategoryToy>
+              ))}
+            </div>
           </TabPanel>
           <TabPanel>
-            <h2>Any content 3</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {categoryToys?.map((toy) => (
+                <SingleCategoryToy key={toy._id} toy={toy}></SingleCategoryToy>
+              ))}
+            </div>
           </TabPanel>
         </div>
       </Tabs>
