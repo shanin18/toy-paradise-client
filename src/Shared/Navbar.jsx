@@ -2,17 +2,19 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "/images/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthProvider";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
-  const {user,logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
-  const handleLogOut = () =>{
-    console.log("clicked")
+  const handleLogOut = () => {
+    console.log("clicked");
 
     logOut()
-    .then(() =>{})
-    .catch(err => console.log(err.message))
-  }
+      .then(() => {})
+      .catch((err) => console.log(err.message));
+  };
 
   return (
     <nav className="bg-gradient-to-r from-[#2e85ff] via-[#01bfff] to-[#60ccff] py-2">
@@ -109,14 +111,26 @@ const Navbar = () => {
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src={user?.photoURL} />
+                  <img
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={user?.displayName}
+                    src={user?.photoURL}
+                  />
+
+                  <Tooltip id="my-tooltip" className="z-50" />
                 </div>
               </label>
-              <ul tabIndex={0}
+              <ul
+                tabIndex={0}
                 className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <p onClick={handleLogOut} className="font-archivo font-medium">Logout</p>
+                  <p
+                    onClick={handleLogOut}
+                    className="font-archivo font-medium"
+                  >
+                    Logout
+                  </p>
                 </li>
               </ul>
             </div>
