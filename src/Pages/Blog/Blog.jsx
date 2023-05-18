@@ -1,4 +1,10 @@
+import useTitle from "../../Hooks/useTitle";
+
+
+
 const Blog = () => {
+useTitle("Blogs")
+
   return (
     <div className="container mx-auto my-20 space-y-10 px-2 md:px-0">
       <div>
@@ -31,7 +37,7 @@ const Blog = () => {
           <ul className="list-disc space-y-3 ml-10">
             <li>
               The client application sends a request to the authentication
-              server with the user's credentials to obtain an access token and
+              server with the users credentials to obtain an access token and
               refresh token.
             </li>
             <li>
