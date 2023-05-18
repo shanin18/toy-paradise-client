@@ -1,8 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "/images/logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthProvider";
 
 const Navbar = () => {
-  const user = "shanin";
+  const {user,logOut} = useContext(AuthContext);
+
+  const handleLogOut = () =>{
+    console.log("clicked")
+
+    logOut()
+    .then(() =>{})
+    .catch(err => console.log(err.message))
+  }
 
   return (
     <nav className="bg-gradient-to-r from-[#2e85ff] via-[#01bfff] to-[#60ccff] py-2">
@@ -95,22 +105,18 @@ const Navbar = () => {
           </ul>
         </div>
         <div>
-          {user.email ? (
+          {user?.email ? (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  <img src={user?.photoURL} />
                 </div>
               </label>
-              <ul
-                tabIndex={0}
+              <ul tabIndex={0}
                 className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
               >
-                <li>
-                  <a>Settings</a>
-                </li>
-                <li>
-                  <a>Logout</a>
+                <li onClick={handleLogOut}>
+                  <a className="font-archivo font-medium">Logout</a>
                 </li>
               </ul>
             </div>
