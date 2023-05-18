@@ -11,7 +11,7 @@ const Gallery = () => {
   return (
     <div>
       <div className="bg-[url('images/banner/avengers.jpg')] bg-fixed bg-center bg-cover px-2 py-16">
-        <h1 className="font-bold font-bangers text-5xl pb-6 text-center text-white ">
+        <h1 className="font-bold font-bangers text-5xl pb-6 text-center text-white tracking-wider">
           Gallery
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 container mx-auto gap-3">
