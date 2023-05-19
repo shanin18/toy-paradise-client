@@ -1,8 +1,13 @@
+import { useLoaderData } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 import { useForm } from "react-hook-form";
 
 const UpdateToyInfo = () => {
   useTitle("Update Toy Info");
+  const toyInfo = useLoaderData()
+  console.log(toyInfo)
+  // const {} = toyInfo;
+
   const {
     register,
     handleSubmit,

@@ -1,8 +1,7 @@
-import { BsPencilSquare, BsEye } from "react-icons/bs";
-import { RiDeleteBinLine } from "react-icons/ri";
 
-const SingleToyRow = ({ toy, index, handleDeleteToy }) => {
-  const { _id, title, sellerName, price, subCategory, availableQuantity } = toy;
+
+const SingleToyRow = ({ toy, index }) => {
+  const { title, sellerName, price, subCategory, availableQuantity } = toy;
 
   return (
     <tr className="font-archivo">
@@ -13,9 +12,7 @@ const SingleToyRow = ({ toy, index, handleDeleteToy }) => {
       <td>{price}</td>
       <td>{availableQuantity}</td>
       <td className="flex gap-5 justify-center">
-        <BsEye className="text-lg cursor-pointer hover:border-2 rounded-full "></BsEye>
-        <BsPencilSquare className="text-lg cursor-pointer hover:border-2 rounded-full"></BsPencilSquare>
-        <RiDeleteBinLine onClick={()=> handleDeleteToy(_id)} className="text-lg cursor-pointer hover:border-2 rounded-full"></RiDeleteBinLine>
+        <button className="font-archivo btn btn-sm btn-ghost capitalize bg-[#01bfff]">View</button>
       </td>
     </tr>
   );

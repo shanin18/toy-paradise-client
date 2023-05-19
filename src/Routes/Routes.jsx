@@ -54,8 +54,9 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/updateToyInfo",
+        path: "/update/:id",
         element: <UpdateToyInfo></UpdateToyInfo>,
+        loader:({params})=> fetch(`http://localhost:5000/update/${params.id}`)
       },
       {
         path: "/blogs",
