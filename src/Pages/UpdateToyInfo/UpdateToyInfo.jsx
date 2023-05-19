@@ -1,8 +1,8 @@
 import useTitle from "../../Hooks/useTitle";
 import { useForm } from "react-hook-form";
 
-const AddAToy = () => {
-  useTitle("Add a toy");
+const UpdateToyInfo = () => {
+  useTitle("Update Toy Info");
   const {
     register,
     handleSubmit,
@@ -14,8 +14,8 @@ const AddAToy = () => {
   };
   return (
     <div className="container mx-auto my-24">
-      <h1 className="font-bold font-bangers text-3xl pb-10 text-center">
-        Add a toy
+      <h1 className="font-bold font-bangers text-3xl pb-10 text-center tracking-wide">
+      Update Toy Info
       </h1>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -85,10 +85,10 @@ const AddAToy = () => {
         {/* errors will return when field validation fails  */}
         {errors.exampleRequired && <span>This field is required</span>}
 
-        <input type="submit" value="ADD Toy" className="btn btn-block mt-8 bg-[#01bfff] border-0" />
+        <input type="submit" value="Update" className="btn btn-block mt-8 bg-[#01bfff] border-0" />
       </form>
     </div>
   );
 };
 
-export default AddAToy;
+export default UpdateToyInfo;

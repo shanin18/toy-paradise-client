@@ -9,7 +9,7 @@ const Error = () => {
       <div>
         <img src={errorImage} alt="error page image" />
         <h1 className="text-center text-3xl font-bold font-archivo">
-          {error.message}
+          {error?.message}
         </h1>
         <div className="text-center mt-4">
           <Link to="/">

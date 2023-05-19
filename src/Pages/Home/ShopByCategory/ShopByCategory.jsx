@@ -30,11 +30,19 @@ const ShopByCategory = () => {
       <Tabs>
         <TabList className="text-center border-b font-archivo text-lg font-medium">
           <Tab onClick={() => setCategory("Marvel")}>Marvel</Tab>
-          <Tab onClick={() => setCategory("Avengers")}>Avenger</Tab>
+          <Tab onClick={() => setCategory("Avengers")}>Avengers</Tab>
           <Tab onClick={() => setCategory("Transformers")}>Transformers</Tab>
+          <Tab onClick={() => setCategory("Star Wars")}>Star Wars</Tab>
         </TabList>
 
         <div className="container mx-auto mt-5">
+          <TabPanel>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {categoryToys?.map((toy) => (
+                <SingleCategoryToy key={toy._id} toy={toy}></SingleCategoryToy>
+              ))}
+            </div>
+          </TabPanel>
           <TabPanel>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {categoryToys?.map((toy) => (
