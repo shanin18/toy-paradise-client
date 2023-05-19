@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-[#2e85ff] via-[#01bfff] to-[#60ccff] py-2">
+    <nav className="bg-gradient-to-r from-[#2e85ff] via-[#01bfff] to-[#60ccff] py-2 sticky top-0 z-40">
       <div className="navbar container mx-auto justify-between">
         <div>
           <div className="dropdown">

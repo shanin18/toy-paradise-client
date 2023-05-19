@@ -18,6 +18,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
+    "react-responsive-carousel": "^3.2.23",
+    "react-responsive-carousel-up-down": "^3.2.25",
     "react-router-dom": "^6.11.2",
     "react-star-rating-input": "^8.0.1",
     "react-tabs": "^6.0.1",
