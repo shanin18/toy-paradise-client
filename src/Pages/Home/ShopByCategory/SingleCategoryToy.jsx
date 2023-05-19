@@ -5,7 +5,7 @@ const SingleCategoryToy = ({ toy }) => {
   const { img, title, price, ratings } = toy;
 
   return (
-    <div className="border flex flex-col justify-between rounded-lg overflow-hidden mx-2">
+    <div className="border flex flex-col justify-between rounded-lg overflow-hidden">
       <img className="h-96" src={img} alt="toy image" />
       <div className="p-4 flex flex-col justify-between gap-8">
         <div>
