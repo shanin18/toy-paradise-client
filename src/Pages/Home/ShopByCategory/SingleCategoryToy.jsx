@@ -1,8 +1,9 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { Link } from "react-router-dom";
 
 const SingleCategoryToy = ({ toy }) => {
-  const { img, title, price, ratings } = toy;
+  const {_id, img, title, price, ratings } = toy;
 
   return (
     <div className="border flex flex-col justify-between rounded-lg overflow-hidden">
@@ -16,9 +17,11 @@ const SingleCategoryToy = ({ toy }) => {
             <small>({ratings})</small>
           </div>
         </div>
-        <button className="btn bg-black capitalize font-archivo font-medium btn-block">
-          View Details
-        </button>
+        <Link to={`/category/${_id}`}>
+          <button className="btn bg-black capitalize font-archivo font-medium btn-block">
+            View Details
+          </button>
+        </Link>
       </div>
     </div>
   );

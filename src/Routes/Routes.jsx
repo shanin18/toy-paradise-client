@@ -10,6 +10,7 @@ import AddAToy from "../Pages/AddAToy/AddAToy";
 import AllToys from "../Pages/AllToys/AllToys";
 import Private from "./Private";
 import UpdateToyInfo from "../Pages/UpdateToyInfo/UpdateToyInfo";
+import SingleCategoryToyDetails from "../Pages/SingleCategoryToyDetails/SingleCategoryToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path:"/category/:id",
+        element:<SingleCategoryToyDetails></SingleCategoryToyDetails>,
+        loader:({params})=> fetch(`http://localhost:5000/category/${params.id}`)
       },
       {
         path: "/allToys",

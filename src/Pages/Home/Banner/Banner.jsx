@@ -1,9 +1,10 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import image1 from "/images/banner/marvel.jpg";
-import image2 from "/images/banner/star_wars.jpg";
-import image3 from "/images/banner/toy_story.jpg";
-import image4 from "/images/banner/spiderman.jpg";
+
+import img1 from "/images/banner/actionfigure.png"
+import img2 from "/images/banner/avengers2.png"
+import img3 from "/images/banner/transformersR.jpg"
+import img4 from "/images/banner/starwars.png"
 
 function Banner() {
   return (
@@ -17,16 +18,16 @@ function Banner() {
         showThumbs={false}
       >
         <div>
-          <img src={image1} />
+          <img className="md:h-[600px] lg:h-[700px]" src={img1} alt="" />
         </div>
         <div>
-          <img src={image2} />
+          <img className="md:h-[600px] lg:h-[700px]" src={img2} alt="" />
         </div>
         <div>
-          <img src={image3} />
+          <img className="md:h-[600px] lg:h-[700px]" src={img3} alt="" />
         </div>
         <div>
-          <img src={image4} />
+          <img className="md:h-[600px] lg:h-[700px]" src={img4} alt="" />
         </div>
       </Carousel>
     </div>

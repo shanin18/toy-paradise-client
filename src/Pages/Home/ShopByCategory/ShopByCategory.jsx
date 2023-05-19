@@ -21,9 +21,10 @@ const ShopByCategory = () => {
   });
   }, [category, navigation.state]);
 
+  // console.log(categoryToys)
 
   return (
-    <div className="mx-2 md:mx-0">
+    <div className="mx-2 md:mx-0 my-24">
       <h1 className="font-bold font-bangers text-5xl pb-10 text-center">
         shop by category
       </h1>

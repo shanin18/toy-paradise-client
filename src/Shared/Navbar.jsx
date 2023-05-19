@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-[#2e85ff] via-[#01bfff] to-[#60ccff] py-2 sticky top-0 z-40">
+    <nav className="bg-gradient-to-r from-[#2e85ff] via-[#01bfff] to-[#60ccff] py-2">
       <div className="navbar container mx-auto justify-between">
         <div>
           <div className="dropdown">
@@ -38,50 +38,60 @@ const Navbar = () => {
               </svg>
             </label>
             <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-archivo font-medium">
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) => (isActive ? "text-[#01bfff]" : "")}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/allToys"
-                className={({ isActive }) => (isActive ? "text-[#01bfff]" : "")}
-              >
-                All Toys
-              </NavLink>
-            </li>
-            {user?.email && (
-              <>
-                <li>
-                  <NavLink
-                    to="/myToys"
-                    className={({ isActive }) => (isActive ? "text-[#01bfff]" : "")}
-                  >
-                    My Toys
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/addAToy"
-                    className={({ isActive }) => (isActive ? "text-[#01bfff]" : "")}
-                  >
-                    Add A Toy
-                  </NavLink>
-                </li>
-              </>
-            )}
-            <li>
-              <NavLink
-                to="/blogs"
-                className={({ isActive }) => (isActive ? "text-[#01bfff]" : "")}
-              >
-                Blogs
-              </NavLink>
-            </li>
+              <li>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "text-[#01bfff]" : ""
+                  }
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/allToys"
+                  className={({ isActive }) =>
+                    isActive ? "text-[#01bfff]" : ""
+                  }
+                >
+                  All Toys
+                </NavLink>
+              </li>
+              {user?.email && (
+                <>
+                  <li>
+                    <NavLink
+                      to="/myToys"
+                      className={({ isActive }) =>
+                        isActive ? "text-[#01bfff]" : ""
+                      }
+                    >
+                      My Toys
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/addAToy"
+                      className={({ isActive }) =>
+                        isActive ? "text-[#01bfff]" : ""
+                      }
+                    >
+                      Add A Toy
+                    </NavLink>
+                  </li>
+                </>
+              )}
+              <li>
+                <NavLink
+                  to="/blogs"
+                  className={({ isActive }) =>
+                    isActive ? "text-[#01bfff]" : ""
+                  }
+                >
+                  Blogs
+                </NavLink>
+              </li>
             </ul>
           </div>
           <Link to="/">
