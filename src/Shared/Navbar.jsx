@@ -37,22 +37,51 @@ const Navbar = () => {
                 />
               </svg>
             </label>
-            <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>All Toys</a>
-              </li>
-              <li>
-                <a>My Toys</a>
-              </li>
-              <li>
-                <a>Add A Toy</a>
-              </li>
-              <li>
-                <a>Blogs</a>
-              </li>
+            <ul className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 font-archivo font-medium">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "text-[#01bfff]" : "")}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/allToys"
+                className={({ isActive }) => (isActive ? "text-[#01bfff]" : "")}
+              >
+                All Toys
+              </NavLink>
+            </li>
+            {user?.email && (
+              <>
+                <li>
+                  <NavLink
+                    to="/myToys"
+                    className={({ isActive }) => (isActive ? "text-[#01bfff]" : "")}
+                  >
+                    My Toys
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to="/addAToy"
+                    className={({ isActive }) => (isActive ? "text-[#01bfff]" : "")}
+                  >
+                    Add A Toy
+                  </NavLink>
+                </li>
+              </>
+            )}
+            <li>
+              <NavLink
+                to="/blogs"
+                className={({ isActive }) => (isActive ? "text-[#01bfff]" : "")}
+              >
+                Blogs
+              </NavLink>
+            </li>
             </ul>
           </div>
           <Link to="/">
