@@ -1,11 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import { Link } from "react-router-dom";
 
 const SingleCategoryToyDetails = () => {
   const toyDetails = useLoaderData();
-  console.log(toyDetails);
+
   const {
     img,
     title,
@@ -17,7 +16,6 @@ const SingleCategoryToyDetails = () => {
     sellerEmail,
     description,
   } = toyDetails;
-
   return (
     <div className="container mx-auto my-20">
       <h1 className="font-bold font-bangers text-4xl pb-10 text-center">
@@ -48,7 +46,9 @@ const SingleCategoryToyDetails = () => {
           </p>
 
           <details className="cursor-pointer w-fit">
-            <summary className="font-archivo font-medium text-lg">Description</summary>
+            <summary className="font-archivo font-medium text-lg">
+              Description
+            </summary>
             <p className="font-archivo font-medium text-lg">{description}</p>
           </details>
         </div>

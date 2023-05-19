@@ -10,7 +10,19 @@ const AddAToy = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    fetch(`http://localhost:5000/allToys`,{
+      method:"POST",
+      headers:{
+        "content-type":"application/json"
+      },
+      body:JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(data =>{
+      if(data.insertedId){
+        data.reset();
+      }
+    })
   };
   return (
     <div className="container mx-auto my-24">
