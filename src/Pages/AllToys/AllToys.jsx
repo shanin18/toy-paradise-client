@@ -1,10 +1,28 @@
 import { useLoaderData } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 import SingleToyRow from "./SingleToyRow";
+import { useState } from "react";
 
 const AllToys = () => {
   useTitle("All toys");
-  const allToys = useLoaderData();
+  const allUserData = useLoaderData();
+  const [allToys, setAllToys] = useState(allUserData);
+
+  const handleDeleteToy = (id) => {
+    fetch(`http://localhost:5000/allToys/${id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          const remaining = allToys.filter((toy) => toy._id !== id);
+          setAllToys(remaining);
+        }
+      });
+  };
 
   return (
     <div className="container mx-auto">
@@ -22,9 +40,14 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {
-                allToys?.map(toy => <SingleToyRow key={toy._id} toy={toy}></SingleToyRow>)
-            }
+            {allToys?.map((toy, index) => (
+              <SingleToyRow
+                key={toy._id}
+                index={index}
+                toy={toy}
+                handleDeleteToy={handleDeleteToy}
+              ></SingleToyRow>
+            ))}
           </tbody>
         </table>
       </div>
