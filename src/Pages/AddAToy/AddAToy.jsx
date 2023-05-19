@@ -19,9 +19,8 @@ const AddAToy = () => {
     })
     .then(res => res.json())
     .then(data =>{
-      if(data.insertedId){
-        data.reset();
-      }
+      // if(data.insertedId){
+      // }
     })
   };
   return (

@@ -9,19 +9,19 @@ const AllToys = () => {
   return (
     <div className="container mx-auto">
       <div className="overflow-x-auto">
-        <table className="table table-compact w-full text-center">
+        <table className="table table-zebra table-compact w-full text-center">
           <thead>
             <tr className="font-archivo">
-              <th></th>
-              <th>Seller</th>
-              <th>Toy Name</th>
-              <th>Sub-Category</th>
-              <th>Price</th>
-              <th>Available Quantity</th>
-              <th>Action</th>
+              <th className="py-4"></th>
+              <th className="py-4">Seller</th>
+              <th className="py-4">Toy Name</th>
+              <th className="py-4">Sub-Category</th>
+              <th className="py-4">Price</th>
+              <th className="py-4">Available Quantity</th>
+              <th className="py-4">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="border-b">
             {allToys?.map((toy, index) => (
               <SingleToyRow
                 key={toy._id}
