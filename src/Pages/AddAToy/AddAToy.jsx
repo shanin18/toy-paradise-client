@@ -1,8 +1,12 @@
+import Swal from "sweetalert2";
 import useTitle from "../../Hooks/useTitle";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthProvider";
 
 const AddAToy = () => {
   useTitle("Add a toy");
+  const {user} = useContext(AuthContext)
   const {
     register,
     handleSubmit,
@@ -10,6 +14,7 @@ const AddAToy = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data)
     fetch(`http://localhost:5000/allToys`,{
       method:"POST",
       headers:{
@@ -19,8 +24,15 @@ const AddAToy = () => {
     })
     .then(res => res.json())
     .then(data =>{
-      // if(data.insertedId){
-      // }
+      if(data.insertedId){
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Toy has been added',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
     })
   };
   return (
@@ -57,9 +69,11 @@ const AddAToy = () => {
 
           {/* include validation with required or other standard HTML validation rules */}
           <input
-            {...register("sellerEmail", { required: true })}
+            {...register("sellerEmail")}
             className="border w-full py-3 px-5 rounded-lg"
             placeholder="Seller email"
+            readOnly
+            value={user?.email}
           />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
