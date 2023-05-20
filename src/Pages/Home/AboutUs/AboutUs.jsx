@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <div className="my-24 h-screen lg:h-[80vh] relative bg-[url('/images/banner/starwars2.jpg')] bg-center bg-cover px-2">
+    <div className="mt-24 h-screen lg:h-[80vh] relative bg-[url('/images/banner/starwars2.jpg')] bg-center bg-cover px-2">
       <div className="inset-0 bg-[#0000007e] absolute py-20">
         <h1 className="font-bold font-bangers text-5xl pb-10 text-center text-white">
           About <span className="text-[#2fcbff]">Us</span>

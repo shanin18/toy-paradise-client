@@ -9,7 +9,8 @@ const SingleCategoryToy = ({ toy }) => {
   const { _id, img, title, price, ratings } = toy;
   const { user } = useContext(AuthContext);
 
-
+  
+  // toast.error("You have to log in first to view details")
 
   return (
     <div data-aos="flip-up">
@@ -24,10 +25,10 @@ const SingleCategoryToy = ({ toy }) => {
               <small>({ratings})</small>
             </div>
           </div>
-          <Link to={`/category/${_id}`}>
-            <button
-              className="btn bg-black capitalize font-archivo font-medium btn-block"
-            >
+          <Link 
+          to={`/category/${_id}`}
+          >
+            <button className="btn bg-black capitalize font-archivo font-medium btn-block">
               View Details
             </button>
           </Link>

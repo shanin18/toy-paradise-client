@@ -8,7 +8,6 @@ import { HiBars3BottomLeft } from "react-icons/hi2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-
   const handleLogOut = () => {
     logOut()
       .then(() => {})

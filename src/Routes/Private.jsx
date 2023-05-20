@@ -5,7 +5,6 @@ import Spinner from "../component/spinner";
 
 const Private = ({ children }) => {
   const location = useLocation();
-
   const { user, loading } = useContext(AuthContext);
   if (loading) {
     return <Spinner></Spinner>;
@@ -14,6 +13,7 @@ const Private = ({ children }) => {
   if (user) {
     return children;
   }
+  
 
   return <Navigate state={{ from: location }} to="/login" replace></Navigate>;
 };

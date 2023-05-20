@@ -4,7 +4,7 @@ import { BsFacebook, BsLinkedin, BsTwitter, BsWhatsapp } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <footer className="bg-black mt-24 text-base-300">
+    <footer className="bg-black text-base-300">
       <div className="container mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 px-2 py-24">
         <div>
           <Link to="/">
@@ -21,11 +21,11 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col font-archivo">
-          <span className="footer-title">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <span className="footer-title">Action Figure Toys</span>
+          <a className="link link-hover">Marvel Toys</a>
+          <a className="link link-hover">Avengers Toys</a>
+          <a className="link link-hover">Star Wars Toys</a>
+          <a className="link link-hover">Transformers Toys</a>
         </div>
         <div className="flex flex-col font-archivo">
           <span className="footer-title">Company</span>
@@ -43,10 +43,10 @@ const Footer = () => {
         <div className="flex flex-col font-archivo">
           <span className="footer-title">Social</span>
           <div className="flex items-center gap-2">
-            <BsFacebook></BsFacebook>
-            <BsLinkedin></BsLinkedin>
-            <BsTwitter></BsTwitter>
-            <BsWhatsapp></BsWhatsapp>
+            <BsFacebook className="cursor-pointer"></BsFacebook>
+            <BsLinkedin className="cursor-pointer"></BsLinkedin>
+            <BsTwitter className="cursor-pointer"></BsTwitter>
+            <BsWhatsapp className="cursor-pointer"></BsWhatsapp>
           </div>
         </div>
       </div>

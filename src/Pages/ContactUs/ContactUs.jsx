@@ -1,6 +1,6 @@
 const ContactUs = () => {
   return (
-    <div className="bg-[#2fcbff70]">
+    <div className="bg-[#2fcbff70] py-10">
       <h1 className="font-bold font-bangers text-5xl pt-20 text-center">
         Contact us
       </h1>
