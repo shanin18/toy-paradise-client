@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const SingleCategoryToy = ({ toy }) => {
   const { _id, img, title, price, ratings } = toy;
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <div className="border flex flex-col justify-between rounded-lg overflow-hidden">
@@ -21,7 +21,11 @@ const SingleCategoryToy = ({ toy }) => {
             <small>({ratings})</small>
           </div>
         </div>
-        <Link to={`/category/${_id}`} onClick={()=> !user && toast.error("You have to log in first to view details")}>
+        <Link
+          to={`/category/${_id}`}
+          onClick={() =>toast("You have to log in first to view details")
+          }
+        >
           <button className="btn bg-black capitalize font-archivo font-medium btn-block">
             View Details
           </button>

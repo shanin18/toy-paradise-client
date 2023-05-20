@@ -6,7 +6,7 @@ import LoginWithSocial from "../../Shared/LoginWithSocial";
 
 const SignUp = () => {
   useTitle("Sign up");
-  const { createUser,updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -23,11 +23,11 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         updateUserProfile(user, name, photo)
-        .then(() => {
-            navigate("/")
-            form.reset()
-        })
-        .catch(err => console.log(err.message))
+          .then(() => {
+            navigate("/");
+            form.reset();
+          })
+          .catch((err) => console.log(err.message));
       })
       .catch((err) => setError(err.message));
   };

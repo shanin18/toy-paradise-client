@@ -9,19 +9,18 @@ const ShopByCategory = () => {
   const navigation = useNavigation();
   const [category, setCategory] = useState("Marvel");
   const [categoryToys, setCategoryToys] = useState([]);
-  
+
   useEffect(() => {
     fetch(`http://localhost:5000/action_figure/${category}`)
-    .then((res) => res.json())
-    .then((data) =>{ 
-      if (navigation.state === "loading") {
-        return <Spinner></Spinner>;
-      }
-    setCategoryToys(data)
-  });
+      .then((res) => res.json())
+      .then((data) => {
+        if (navigation.state === "loading") {
+          return <Spinner></Spinner>;
+        }
+        setCategoryToys(data);
+      });
   }, [category, navigation.state]);
 
-  // console.log(categoryToys)
 
   return (
     <div className="mx-2 md:mx-0 my-24">

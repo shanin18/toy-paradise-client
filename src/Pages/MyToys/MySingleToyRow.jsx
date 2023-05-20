@@ -1,20 +1,8 @@
-import { BsPencilSquare } from "react-icons/bs";
+import { BsEye, BsPencilSquare } from "react-icons/bs";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-
-const MySingleToyRow = ({ toy, index, handleDeleteToy }) => {
-  const {
-    _id,
-    img,
-    sellerEmail,
-    ratings,
-    title,
-    sellerName,
-    price,
-    subCategory,
-    availableQuantity,
-    description,
-  } = toy;
+const MySingleToyRow = ({ toy, index, handleDeleteToy, handleModal }) => {
+  const { _id, title, sellerName, price, subCategory, availableQuantity } = toy;
 
   return (
     <tr className="font-archivo">
@@ -26,6 +14,15 @@ const MySingleToyRow = ({ toy, index, handleDeleteToy }) => {
       <td className="py-3">{availableQuantity}</td>
       <td className="py-3">
         <div className="flex gap-5 justify-center">
+          {/* The button to open modal */}
+          <label
+            onClick={() => handleModal(_id)}
+            htmlFor="my-modal-3"
+            className="btn btn-ghost btn-sm shadow-md rounded-full"
+          >
+            <BsEye className="text-[#01bfff]"></BsEye>
+          </label>
+
           <Link to={`/update/${_id}`}>
             <button className="btn btn-ghost btn-sm shadow-md rounded-full">
               <BsPencilSquare className="text-green-500"></BsPencilSquare>

@@ -2,18 +2,38 @@ import { useLoaderData } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 import SingleToyRow from "./SingleToyRow";
 import { useState } from "react";
+import { Rating } from "@smastrom/react-rating";
 
 const AllToys = () => {
   useTitle("All toys");
   const allUsersToys = useLoaderData();
   const [allToys, setAllToys] = useState(allUsersToys);
   const [value, setValue] = useState("");
+  const [toyDetails, setToyDetails] = useState([]);
 
   const handleSearch = () => {
     fetch(`http://localhost:5000/searchByToy/${value}`)
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   };
+
+  const handleModal = (id) => {
+    fetch(`http://localhost:5000/allToys/${id}`)
+      .then((res) => res.json())
+      .then((data) => setToyDetails(data));
+  };
+
+  const {
+    img,
+    sellerEmail,
+    ratings,
+    title,
+    sellerName,
+    price,
+    subCategory,
+    availableQuantity,
+    description,
+  } = toyDetails;
 
   return (
     <div className="container mx-auto">
@@ -62,10 +82,54 @@ const AllToys = () => {
                 key={toy._id}
                 index={index}
                 toy={toy}
+                handleModal={handleModal}
               ></SingleToyRow>
             ))}
           </tbody>
         </table>
+      </div>
+      {/* modal body */}
+      <div>
+        <input type="checkbox" id="my-modal-2" className="modal-toggle" />
+        <div className="modal">
+          <div className="modal-box relative overflow-x-scroll">
+            <label
+              htmlFor="my-modal-2"
+              className="btn btn-sm btn-circle absolute right-2 top-2"
+            >
+              ✕
+            </label>
+            <div className="text-left">
+              <img src={img} className="mb-8" alt="toy image" />
+              <h2 className="font-bangers text-2xl mb-2">{title}</h2>
+              <p>
+                <span className="font-semibold">SubCategory:</span>{" "}
+                {subCategory}
+              </p>
+              <p>
+                <span className="font-semibold">Price:</span> ${price}
+              </p>
+              <p>
+                <span className="font-semibold">AvailableQuantity:</span>
+                {availableQuantity}
+              </p>
+              <div className="flex gap-2 items-center mt-1">
+                <span className="font-semibold">Ratings:</span>
+                <Rating style={{ maxWidth: 80 }} readOnly value={ratings} />
+              </div>
+              <p>
+                <span className="font-semibold">Seller:</span> {sellerName}
+              </p>
+              <p>
+                <span className="font-semibold">Email:</span> {sellerEmail}
+              </p>
+              <p>
+                <span className="font-semibold">Description:</span>{" "}
+                {description}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

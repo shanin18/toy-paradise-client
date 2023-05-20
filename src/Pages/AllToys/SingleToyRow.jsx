@@ -1,7 +1,7 @@
 import { BsEye } from "react-icons/bs";
 
-const SingleToyRow = ({ toy, index }) => {
-  const { title, sellerName, price, subCategory, availableQuantity } = toy;
+const SingleToyRow = ({ toy, index, handleModal }) => {
+  const { _id, title, sellerName, price, subCategory, availableQuantity } = toy;
 
   return (
     <tr className="font-archivo">
@@ -12,9 +12,14 @@ const SingleToyRow = ({ toy, index }) => {
       <td className="py-3">{price}</td>
       <td className="py-3">{availableQuantity}</td>
       <td className="py-3">
-        <button className="btn btn-ghost btn-sm shadow-md rounded-full">
+        {/* The button to open modal */}
+        <label
+          onClick={() => handleModal(_id)}
+          htmlFor="my-modal-2"
+          className="btn btn-ghost btn-sm shadow-md rounded-full"
+        >
           <BsEye className="text-[#01bfff]"></BsEye>
-        </button>
+        </label>
       </td>
     </tr>
   );

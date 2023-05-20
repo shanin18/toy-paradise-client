@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const UpdateToyInfo = () => {
   useTitle("Update Toy Info");
   const toyInfo = useLoaderData();
-  console.log(toyInfo);
+  const navigate = useNavigate();
   const {
     _id,
     title,
@@ -45,6 +45,7 @@ const UpdateToyInfo = () => {
           .then((data) => {
             if (data.modifiedCount > 0) {
               Swal.fire("Updated!", "", "success");
+              navigate("/myToys");
             }
           });
       } else if (result.isDenied) {

@@ -6,7 +6,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 
 const AddAToy = () => {
   useTitle("Add a toy");
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -14,26 +14,26 @@ const AddAToy = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
-    fetch(`http://localhost:5000/allToys`,{
-      method:"POST",
-      headers:{
-        "content-type":"application/json"
+    console.log(data);
+    fetch(`http://localhost:5000/allToys`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body:JSON.stringify(data)
+      body: JSON.stringify(data),
     })
-    .then(res => res.json())
-    .then(data =>{
-      if(data.insertedId){
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: 'Toy has been added',
-          showConfirmButton: false,
-          timer: 1500
-        })
-      }
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Toy has been added",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
   };
   return (
     <div className="container mx-auto my-24">
@@ -96,21 +96,29 @@ const AddAToy = () => {
             className="border w-full py-3 px-5 rounded-lg"
             placeholder="Quantity"
           />
-          <select {...register("subCategory")} className="border w-full rounded-lg px-5 py-3">
+          <select
+            {...register("subCategory")}
+            className="border w-full rounded-lg px-5 py-3"
+          >
             <option value="Marvel">Marvel</option>
             <option value="Avengers">Avengers</option>
             <option value="Transformers">Transformers</option>
             <option value="Star Wars">Star Wars</option>
           </select>
         </div>
-        <textarea className="w-full border rounded-lg h-64 px-5 py-2" {...register("description", { required: true })}>
-
-        </textarea>
+        <textarea
+          className="w-full border rounded-lg h-64 px-5 py-2"
+          {...register("description", { required: true })}
+        ></textarea>
 
         {/* errors will return when field validation fails  */}
         {errors.exampleRequired && <span>This field is required</span>}
 
-        <input type="submit" value="ADD Toy" className="btn btn-block mt-8 bg-[#01bfff] border-0" />
+        <input
+          type="submit"
+          value="ADD Toy"
+          className="btn btn-block mt-8 bg-[#01bfff] border-0"
+        />
       </form>
     </div>
   );

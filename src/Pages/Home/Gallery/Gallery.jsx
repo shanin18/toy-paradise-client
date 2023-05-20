@@ -1,11 +1,11 @@
-import img1 from "/images/gallery/img1.avif"
-import img2 from "/images/gallery/img2.avif"
-import img3 from "/images/gallery/img3.avif"
-import img4 from "/images/gallery/img4.avif"
-import img5 from "/images/gallery/img5.avif"
-import img6 from "/images/gallery/img6.avif"
-import img7 from "/images/gallery/img7.avif"
-import img8 from "/images/gallery/img8.avif"
+import img1 from "/images/gallery/img1.avif";
+import img2 from "/images/gallery/img2.avif";
+import img3 from "/images/gallery/img3.avif";
+import img4 from "/images/gallery/img4.avif";
+import img5 from "/images/gallery/img5.avif";
+import img6 from "/images/gallery/img6.avif";
+import img7 from "/images/gallery/img7.avif";
+import img8 from "/images/gallery/img8.avif";
 
 const Gallery = () => {
   return (
@@ -15,14 +15,14 @@ const Gallery = () => {
           Gallery
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 container mx-auto gap-3 md:gap-4">
-            <img src={img1} alt="gallery-image" />
-            <img src={img2} alt="gallery-image" />
-            <img src={img3} alt="gallery-image" />
-            <img src={img4} alt="gallery-image" />
-            <img src={img5} alt="gallery-image" />
-            <img src={img6} alt="gallery-image" />
-            <img src={img7} alt="gallery-image" />
-            <img src={img8} alt="gallery-image" />
+          <img src={img1} alt="gallery-image" />
+          <img src={img2} alt="gallery-image" />
+          <img src={img3} alt="gallery-image" />
+          <img src={img4} alt="gallery-image" />
+          <img src={img5} alt="gallery-image" />
+          <img src={img6} alt="gallery-image" />
+          <img src={img7} alt="gallery-image" />
+          <img src={img8} alt="gallery-image" />
         </div>
       </div>
     </div>

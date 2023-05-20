@@ -1,9 +1,7 @@
 import useTitle from "../../Hooks/useTitle";
 
-
-
 const Blog = () => {
-useTitle("Blogs")
+  useTitle("Blogs");
 
   return (
     <div className="container mx-auto my-20 space-y-10 px-2 md:px-0">
@@ -75,7 +73,7 @@ useTitle("Blogs")
         <h1 className="font-bold text-3xl mb-7 font-archivo">
           2. Compare SQL and NoSQL databases?
         </h1>
-        <p className="font-archivo text-lg">
+        <div className="font-archivo text-lg">
           SQL databases:
           <ul className="list-disc space-y-3 ml-10 mt-2">
             <li>
@@ -127,7 +125,7 @@ useTitle("Blogs")
               requirements of the application.
             </li>
           </ul>
-        </p>
+        </div>
       </div>
       <div>
         <h1 className="font-bold text-3xl mb-7 font-archivo">
