@@ -21,17 +21,15 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col font-archivo">
-          <span className="footer-title">Action Figure Toys</span>
-          <a className="link link-hover">Marvel Toys</a>
-          <a className="link link-hover">Avengers Toys</a>
-          <a className="link link-hover">Star Wars Toys</a>
-          <a className="link link-hover">Transformers Toys</a>
+          <span className="footer-title">Address</span>
+          <a className="link link-hover">tp12@gmail.com</a>
+          <a className="link link-hover">Dhanmondi-32 Dhaka</a>
+          <a className="link link-hover">Shewrapara, Dhaka</a>
         </div>
         <div className="flex flex-col font-archivo">
           <span className="footer-title">Company</span>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
         </div>
         <div className="flex flex-col font-archivo">
@@ -42,11 +40,11 @@ const Footer = () => {
         </div>
         <div className="flex flex-col font-archivo">
           <span className="footer-title">Social</span>
-          <div className="flex items-center gap-2">
-            <BsFacebook className="cursor-pointer"></BsFacebook>
-            <BsLinkedin className="cursor-pointer"></BsLinkedin>
-            <BsTwitter className="cursor-pointer"></BsTwitter>
-            <BsWhatsapp className="cursor-pointer"></BsWhatsapp>
+          <div className="flex items-center gap-4">
+            <BsFacebook className="cursor-pointer text-lg md:text-xl"></BsFacebook>
+            <BsLinkedin className="cursor-pointer text-lg md:text-xl"></BsLinkedin>
+            <BsTwitter className="cursor-pointer text-lg md:text-xl"></BsTwitter>
+            <BsWhatsapp className="cursor-pointer text-lg md:text-xl"></BsWhatsapp>
           </div>
         </div>
       </div>

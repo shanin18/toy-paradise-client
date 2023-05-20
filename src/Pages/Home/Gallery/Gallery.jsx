@@ -13,36 +13,34 @@ AOS.init();
 
 const Gallery = () => {
   return (
-    <div>
-      <div className="bg-[url('images/banner/avengers.jpg')] bg-fixed bg-center bg-cover px-2 py-20">
-        <h1 className="font-bold font-bangers text-5xl mb-10 text-center text-white tracking-wider">
-          Gallery
-        </h1>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 container mx-auto gap-3 md:gap-4">
-          <div data-aos="fade-right">
-            <img src={img1} alt="gallery-image" />
-          </div>
-          <div data-aos="fade-down">
-            <img src={img2} alt="gallery-image" />
-          </div>
-          <div data-aos="fade-down">
-            <img src={img3} alt="gallery-image" />
-          </div>
-          <div data-aos="fade-left">
-            <img src={img4} alt="gallery-image" />
-          </div>
-          <div data-aos="fade-right">
-            <img src={img5} alt="gallery-image" />
-          </div>
-          <div data-aos="fade-up">
-            <img src={img6} alt="gallery-image" />
-          </div>
-          <div data-aos="fade-up">
-            <img src={img7} alt="gallery-image" />
-          </div>
-          <div data-aos="fade-left">
-            <img src={img8} alt="gallery-image" />
-          </div>
+    <div className="bg-[url('/images/banner/avengers.jpg')] bg-fixed bg-center bg-cover px-2 py-20 overflow-hidden">
+      <h1 className="font-bold font-bangers text-5xl mb-10 text-center text-white tracking-wider">
+        Gallery
+      </h1>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 container mx-auto gap-3 md:gap-4">
+        <div data-aos="fade-right">
+          <img src={img1} alt="gallery-image" />
+        </div>
+        <div data-aos="fade-down">
+          <img src={img2} alt="gallery-image" />
+        </div>
+        <div data-aos="fade-down">
+          <img src={img3} alt="gallery-image" />
+        </div>
+        <div data-aos="fade-left">
+          <img src={img4} alt="gallery-image" />
+        </div>
+        <div data-aos="fade-right">
+          <img src={img5} alt="gallery-image" />
+        </div>
+        <div data-aos="fade-up">
+          <img src={img6} alt="gallery-image" />
+        </div>
+        <div data-aos="fade-up">
+          <img src={img7} alt="gallery-image" />
+        </div>
+        <div data-aos="fade-left">
+          <img src={img8} alt="gallery-image" />
         </div>
       </div>
     </div>

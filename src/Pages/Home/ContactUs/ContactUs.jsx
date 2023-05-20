@@ -1,21 +1,28 @@
 const ContactUs = () => {
   return (
-    <div className="bg-[#2fcbff70] py-10">
+    <div className="bg-[#2fcbff70] py-10 overflow-hidden">
       <h1 className="font-bold font-bangers text-5xl pt-20 text-center">
         Contact us
       </h1>
       <div>
         <div className="hero py-10 ">
           <div className="hero-content gap-10 flex-col lg:flex-row">
+            <div className="md:w-1/3">
               <img
                 src="https://i.ibb.co/fCH3zkF/captain.jpg"
-                className="md:w-1/3 rounded-lg shadow-2xl"
-                data-aos="fade-right"
-                data-aos-easing="ease-in-sine"
+                className=" rounded-lg shadow-2xl"
+                data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"
               />
+            </div>
 
-            <div data-aos="fade-left"
-                data-aos-easing="ease-in-sine" className="w-full md:w-2/3">
+            <div
+              data-aos="flip-right"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000"
+              className="w-full md:w-2/3"
+            >
               <div className="card w-full shadow-2xl bg-base-100">
                 <div className="card-body font-archivo">
                   <h2 className="font-bold font-archivo text-3xl text-[#2fcbff]">

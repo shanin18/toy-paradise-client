@@ -11,7 +11,7 @@ const ShopByCategory = () => {
   const [categoryToys, setCategoryToys] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/action_figure/${category}`)
+    fetch(`https://toy-paradise-server-brown.vercel.app/action_figure/${category}`)
       .then((res) => res.json())
       .then((data) => {
         if (navigation.state === "loading") {
@@ -23,7 +23,7 @@ const ShopByCategory = () => {
 
 
   return (
-    <div className="mx-2 md:mx-0 my-24">
+    <div className="mx-2 md:mx-0 my-24 overflow-hidden">
       <h1 className="font-bold font-bangers text-5xl pb-10 text-center">
         shop by category
       </h1>

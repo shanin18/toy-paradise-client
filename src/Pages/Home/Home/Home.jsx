@@ -1,7 +1,7 @@
 import useTitle from "../../../Hooks/useTitle";
-import ContactUs from "../../ContactUs/ContactUs";
 import AboutUs from "../AboutUs/AboutUs";
 import Banner from "../Banner/Banner";
+import ContactUs from "../ContactUs/ContactUs";
 import Gallery from "../Gallery/Gallery";
 import ShopByCategory from "../ShopByCategory/ShopByCategory";
 

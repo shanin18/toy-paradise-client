@@ -12,13 +12,13 @@ const AllToys = () => {
   const [toyDetails, setToyDetails] = useState([]);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/searchByToy/${value}`)
+    fetch(`https://toy-paradise-server-brown.vercel.app/searchByToy/${value}`)
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   };
 
   const handleModal = (id) => {
-    fetch(`http://localhost:5000/allToys/${id}`)
+    fetch(`https://toy-paradise-server-brown.vercel.app/allToys/${id}`)
       .then((res) => res.json())
       .then((data) => setToyDetails(data));
   };
@@ -36,8 +36,8 @@ const AllToys = () => {
   } = toyDetails;
 
   return (
-    <div className="container mx-auto">
-      <div className="flex justify-center mt-16 mb-8">
+    <div className="container mx-auto my-16">
+      <div className="flex justify-center mb-8">
         <div className="input-group w-fit">
           <input
             type="text"
@@ -76,7 +76,7 @@ const AllToys = () => {
               <th className="py-4">Action</th>
             </tr>
           </thead>
-          <tbody className="border-b">
+          <tbody>
             {allToys?.map((toy, index) => (
               <SingleToyRow
                 key={toy._id}

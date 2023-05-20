@@ -27,7 +27,7 @@ const Login = () => {
   };
 
   return (
-    <div className="mx-4 mt-24">
+    <div className="mx-4 my-16">
       <div className="card-body md:w-96 shadow-2xl mx-auto rounded-xl">
         <h2 className="font-bangers text-3xl md:text-4xl text-center my-4">
           Login
