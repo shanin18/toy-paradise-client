@@ -6,15 +6,14 @@ import MySingleToyRow from "./MySingleToyRow";
 
 const MyToys = () => {
   const [myToys, setMyToys] = useState();
+  const [price, setPrice] = useState("increasing");
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys?email=${user.email}`)
+    fetch(`http://localhost:5000/myToys?email=${user.email}&sort=${price}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
-  }, [user]);
-
-  // console.log(user.email);
+  }, [user, price]);
 
   useTitle("My Toys");
   const handleDeleteToy = (id) => {
@@ -45,8 +44,28 @@ const MyToys = () => {
       }
     });
   };
+
+  const handleSortByPrice = (e) => {
+    setPrice(e.target.value);
+    fetch(`http://localhost:5000/myToys?email=${user.email}&sort=${price}`)
+      .then((res) => res.json())
+      .then((data) => setMyToys(data));
+  };
+
   return (
     <div className="container mx-auto">
+      <div className="flex font-archivo items-center mt-16 mb-8 gap-3">
+        <p>Price:</p>
+        <select
+          defaultValue={"increasing"}
+          onChange={handleSortByPrice}
+          className="font-archivo border px-4 py-2 rounded-lg"
+        >
+          <option value="increasing">Low to high</option>
+          <option value="decreasing">High to low</option>
+        </select>
+      </div>
+
       <div className="overflow-x-auto">
         <table className="table table-zebra table-compact w-full text-center">
           <thead>

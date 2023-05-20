@@ -93,6 +93,7 @@ const UpdateToyInfo = () => {
             className="border w-full py-3 px-5 rounded-lg"
             placeholder="Seller email"
             defaultValue={sellerEmail}
+            readOnly
           />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
