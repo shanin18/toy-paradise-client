@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { BsEye } from "react-icons/bs";
+import { AuthContext } from "../../Context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const SingleToyRow = ({ toy, index, handleModal }) => {
   const { _id, title, sellerName, price, subCategory, availableQuantity } = toy;
-
+  const {user} = useContext(AuthContext);
+  const navigate = useNavigate()
   return (
     <tr className="font-archivo">
       <th className="py-3">{index + 1}</th>
@@ -14,7 +18,7 @@ const SingleToyRow = ({ toy, index, handleModal }) => {
       <td className="py-3">
         {/* The button to open modal */}
         <label
-          onClick={() => handleModal(_id)}
+          onClick={() => !user ? navigate("/login"): handleModal(_id)}
           htmlFor="my-modal-2"
           className="btn btn-ghost btn-sm shadow-md rounded-full"
         >

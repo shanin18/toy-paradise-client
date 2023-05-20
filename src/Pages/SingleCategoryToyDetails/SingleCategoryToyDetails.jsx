@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 
@@ -51,6 +51,7 @@ const SingleCategoryToyDetails = () => {
             </summary>
             <p className="font-archivo font-medium text-lg">{description}</p>
           </details>
+          <Link to="/" className="font-archivo btn bg-[#01bfff] btn-sm capitalize border-0 mt-5" >Go Back</Link>
         </div>
       </div>
     </div>

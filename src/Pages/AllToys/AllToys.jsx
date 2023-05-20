@@ -99,7 +99,7 @@ const AllToys = () => {
             >
               ✕
             </label>
-            <div className="text-left">
+            <div className="text-left space-y-1">
               <img src={img} className="mb-8" alt="toy image" />
               <h2 className="font-bangers text-2xl mb-2">{title}</h2>
               <p>
@@ -113,7 +113,7 @@ const AllToys = () => {
                 <span className="font-semibold">AvailableQuantity:</span>
                 {availableQuantity}
               </p>
-              <div className="flex gap-2 items-center mt-1">
+              <div className="flex gap-2 items-center">
                 <span className="font-semibold">Ratings:</span>
                 <Rating style={{ maxWidth: 80 }} readOnly value={ratings} />
               </div>
