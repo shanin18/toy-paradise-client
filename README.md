@@ -13,7 +13,7 @@ Welcome to the Action Figure Toys Website! This project showcases an interactive
 ## Features
 - Single Page Application(SPA)
 - Responsive Design: Ensure that your website is fully responsive and optimized for different devices, such as desktops, tablets, and mobile phones.
-- Extensive collection: Browse through a diverse range of action figures, featuring popular characters from comics, movies, and TV shows.
+- Extensive collection: Browse through a diverse range of action figures, featuring popular characters from avengers, starwars, marvel and transformers.
 - Detailed product information: Get comprehensive details about each action figure, including character descriptions, dimensions, and special features.
 - Search and filter: Easily search for specific action figures or apply filters based on characters, franchises, or release dates.
 - User Authentication: Enable user registration and login functionality using Firebase Authentication. Allow users to create accounts, log in securely, and manage their profiles.
