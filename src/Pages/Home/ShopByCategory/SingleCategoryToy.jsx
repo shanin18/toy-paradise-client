@@ -1,16 +1,20 @@
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider";
-import { toast } from "react-toastify";
 
 const SingleCategoryToy = ({ toy }) => {
   const { _id, img, title, price, ratings } = toy;
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  
-  // toast.error("You have to log in first to view details")
+  const handleToast = () =>{
+    if(!user){
+      alert("You have to log in first to view details")
+      navigate("/login")
+    }
+  }
 
   return (
     <div data-aos="flip-up">
@@ -28,7 +32,7 @@ const SingleCategoryToy = ({ toy }) => {
           <Link 
           to={`/category/${_id}`}
           >
-            <button className="btn bg-black capitalize font-archivo font-medium btn-block">
+            <button onClick={handleToast} className="btn bg-black capitalize font-archivo font-medium btn-block">
               View Details
             </button>
           </Link>

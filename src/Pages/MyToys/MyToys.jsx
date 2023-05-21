@@ -5,6 +5,7 @@ import { AuthContext } from "../../Context/AuthProvider";
 import MySingleToyRow from "./MySingleToyRow";
 import { Rating } from "@smastrom/react-rating";
 const MyToys = () => {
+  useTitle("My Toys");
   const [myToys, setMyToys] = useState([]);
   const [toyDetails, setToyDetails] = useState([]);
   const [sortValue, setSortValue] = useState("increasing");
@@ -18,7 +19,6 @@ const MyToys = () => {
       .then((data) => setMyToys(data));
   }, [user, sortValue]);
 
-  useTitle("My Toys");
   const handleDeleteToy = (id) => {
     Swal.fire({
       title: "Are you sure?",

@@ -11,6 +11,7 @@ const AddAToy = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit = (data) => {
@@ -31,6 +32,7 @@ const AddAToy = () => {
             showConfirmButton: false,
             timer: 1500,
           });
+          reset();
         }
       });
   };

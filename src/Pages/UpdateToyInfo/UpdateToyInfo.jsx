@@ -17,7 +17,6 @@ const UpdateToyInfo = () => {
     ratings,
     availableQuantity,
   } = toyInfo;
-  console.log(_id);
   const {
     register,
     handleSubmit,
