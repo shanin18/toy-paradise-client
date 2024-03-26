@@ -37,7 +37,7 @@ Welcome to the Action Figure Toys Website! This project showcases an interactive
     <li><a href="https://react.dev/">React</a></li>
     <li><a href="https://tailwindcss.com/">Tailwind</a></li>
     <li><a href="https://mui.com/">Daisy UI</a></li>
-    <li><a href="https://mui.com/">AOS</a></li>
+    <li><a href="https://michalsnik.github.io/aos/">AOS</a></li>
   </ul>
 </details>
 <details>
